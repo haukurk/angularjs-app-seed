@@ -1,8 +1,9 @@
-/* global angular */
+/*global angular*/
 
 var app = 
-	angular.module('theApp', 
-				  ['ngCookies', 
+	angular.module('app',
+				  ['app.filters', // custom filters.
+                  'ngCookies',
 				  'ngResource', 
 				  'ngSanitize', 
 				  'ngRoute', 

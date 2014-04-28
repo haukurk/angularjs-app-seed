@@ -1,10 +1,6 @@
-/* global app */
+/*global app*/
 
-/*
- * Note: Naming convention for controllers are UpperCamelCase.
- */
-
-/*----- Start of Controller = ExampleCtrl ------*/
+/* Note: Naming convention for controllers are UpperCamelCase. */
 
 app.controller('ExampleCtrl', ['$scope', '$log', function ($scope, $log) {
 
@@ -19,8 +15,5 @@ app.controller('ExampleCtrl', ['$scope', '$log', function ($scope, $log) {
 	$log.log('Controller := ExampleCtrl')
 	
 }]);
-
-/*-----  End of Controller = ExampleCtrl  ------*/
-
 
 

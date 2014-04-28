@@ -1,3 +1,5 @@
+/*global app*/
+
 app.directive('ExampleDirective', ['ExampleService'], function(ExampleService) {
         return {
 

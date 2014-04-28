@@ -1,4 +1,4 @@
-/* global app */
+/*global app*/
 
 'use strict';
 
@@ -30,4 +30,4 @@ app.module('app.filters')
 		  return out;
 		};
 		}
-	)
+	);
