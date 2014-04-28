@@ -20,8 +20,8 @@ var src = {
 	fonts: './app/fonts/*',
     sass: './app/css/scss/*.scss',
 	css: ['./app/css/*.css','./app/css/**/**/*.css'],
-    views: './views/**/*.html',
-	index: './app/index.{html,htm}',
+    views: ['./views/**/*.html', '!./views/index.{html,htm}'],
+	index: './views/index.{html,htm}',
 	libs: ['./app/libs/*.js','./app/libs/**/*.js'],
     images: ['./app/images/**/*']
 };
@@ -83,8 +83,8 @@ gulp.task('clean:zip', function() {
 */
 
 gulp.task('build', ['build:css','build:js','build:html','build:fonts','build:libs','build:zip'] , function() {
-  return gulp.src(build.root, {read: false})
-    .pipe(clean({force: true}));
+  return gulp.src(src.index, {read: false})
+    .pipe(gulp.dest(build.distroot));
 });
 
 /* Custom CSS */
