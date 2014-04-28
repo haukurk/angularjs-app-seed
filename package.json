@@ -1,0 +1,29 @@
+﻿{
+  "name": "corpdirapplication",
+  "version": "0.0.1",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "~3.5.0",
+    "gulp-clean": "*",
+    "gulp-concat": "~2.1.7",
+    "gulp-gzip": "0.0.3",
+    "gulp-if": "0.0.3",
+    "gulp-imagemin": "~0.1.4",
+    "gulp-jshint": "~1.3.4",
+    "gulp-minify-css": "~0.1.0",
+    "gulp-minify-html": "~0.1.0",
+    "gulp-rename": "~0.2.1",
+    "gulp-sass": "~0.2.3",
+    "gulp-uglify": "~0.1.0",
+    "gulp-watch": "~0.3.3",
+    "gulp-zip": "~0.1.2",
+    "gulp-bower-files": "0.2.2",
+    "jshint-stylish": "*",
+    "open": "*",
+    "run-sequence": "~0.3.6",
+    "bower": ">=1.3.3"
+  },
+  "engines": {
+    "node": ">=0.10.26"
+  }
+}
