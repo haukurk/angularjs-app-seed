@@ -9,10 +9,10 @@
     "angular-route": "1.2.16",
     "angular-animate": "1.2.16",
     "jquery": "1.11.0",
-	"underscore": "*",
-	"moment": "*",
-	"fontawesome": "*",
-	"ionicons": "*"
+	"underscore": "1.6.0",
+	"moment": "2.6.0",
+	"fontawesome": "4.0.3",
+	"ionicons": "1.4.1"
   },
   "devDependencies":
   {},
