@@ -12,8 +12,6 @@ app.controller('ExampleCtrl', ['$scope', '$log', function ($scope, $log) {
 	
 	$scope.$log = $log;
 	
-	$log.log('Controller := ExampleCtrl')
+	$log.log('Controller := ExampleCtrl');
 	
 }]);
-
-

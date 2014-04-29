@@ -1,15 +1,14 @@
 /*global angular*/
 
 var app = 
-	angular.module('app',
-				  ['app.filters', // custom filters.
-                  'ngCookies',
-				  'ngResource', 
-				  'ngSanitize', 
-				  'ngRoute', 
-				  'ngAnimate',
-				  'ui.bootstrap', // Directives for Bootstrap from http://angular-ui.github.io/bootstrap/
-				  'angularMoment']); // Directives for MomentJS from https://github.com/urish/angular-moment
+	angular.module('seedapp',
+                ['ngCookies',
+                'ngResource',
+                'ngSanitize',
+                'ngRoute',
+                'ngAnimate',
+                'ui.bootstrap', // Directives for Bootstrap from http://angular-ui.github.io/bootstrap/
+                'angularMoment']); // Directives for MomentJS from https://github.com/urish/angular-moment
 
 app.config(
 	['$routeProvider', '$locationProvider', '$httpProvider', 

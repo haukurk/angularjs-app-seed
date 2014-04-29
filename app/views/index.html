@@ -3,7 +3,7 @@
 <html lang="en" data-framework="angularjs">
 
   <head>
-  
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,223 +15,46 @@
 
     <title>Example Index.</title>
 
+    <!-- rev-hash -->
     <!-- build:styles -->
+    <link href="./assets/css/vendor.css" rel="stylesheet">
+    <link href="./assets/css/app.css" rel="stylesheet">
 	<!-- endbuild -->
-	
-	<!-- build:fonts -->
-	<!-- endbuild -->
+    <!-- end -->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-		<script src="./assets/js/libs/bootstrap/html5shiv.js"></script>
-		<script src="./assets/js/libs/bootstrap/respond.min.js"></script>
+		<script src="./assets/js/libs/html5shiv.js"></script>
+		<script src="./assets/js/libs/respond.min.js"></script>
     <![endif]-->
 
     <style>[ng-cloak] { display: none; }</style>
 
   </head>
 
-  <body ng-cloak ng-app="samStatApp">
+  <body ng-cloak ng-app="seedapp">
 
-    <!-- Wrap all page content here -->
-    <div id="wrap">
+    <div class="container">
 
-      <!-- Begin page content -->
-      <div class="container-full">
-      
-	  <div class="row">
-      
-          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6"><img src="assets/img/Logo-V2.png" class="img-responsive" alt="Responsive image">
+      <form class="form-signin">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="text" class="input-block-level" placeholder="Email address">
+        <input type="password" class="input-block-level" placeholder="Password">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+      </form>
 
-              <div class="btn-group">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                      Operations
-                      <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a href="/?refresh=true">Refresh</a></li>
-                    </ul>
-              </div>
+    </div> <!-- /container -->
 
-          </div>
-
-          <div class="col-lg-5 col-md-6 col-sm-6 col-xs-6 visible-lg text-center" ng-controller="dateCtrl">
-              <p class="timetext">Today is {{ now.format('dddd') }} the {{ now.format('D') }}{{ daySuffix }} of {{ now.format('MMMM') }}.</p>
-              <span class="time"><span class="hours">{{ now.format('HH') }}</span>:<span class="minutes">{{ now.format('mm') }}</span>:<span class="seconds">{{ now.format('ss') }}</span></span>
-          </div>
-
-          <div class="col-lg-4 hidden-xs text-right">
-              <ul clasS="list-inline">
-              <li>
-                <analogclock timezone="0" label="Reykjavik" />
-              </li>
-              <li>
-                  <analogClock timezone="2" label="Rotterdam"/>
-              </li>
-              <li>
-                  <analogClock timezone="-5" label="Norfolk"/>
-              </li>
-              <li>
-                  <analogClock timezone="10" label="Sydney"/>
-              </li>
-              </ul>
-          </div>
-      
-	  </div>
-
-	  <div class="row well" >
-
-            <ul class="list-inline">
-            <li class="col-lg-3" ng-controller="graphCtrl" ng-init="init(13,4)">
-            <div class="caption text-center"><b>Reykjavik (Orange BS)</b></div>
-            <canvas linechart options="myOptions" type="Line" data="chart" width="0" height="0"></canvas>
-            </li>
-            <li class="col-lg-3" ng-controller="graphCtrl" ng-init="init(12,4)">
-            <div class="caption text-center"><b>Rotterdam (Orange BS)</b></div>
-            <canvas linechart options="myOptions" type="Line" data="chart" width="0" height="0"></canvas>
-            </li>
-            <li class="col-lg-3" ng-controller="graphCtrl" ng-init="init(14,4)">
-            <div class="caption text-center"><b>Reykjavik (DMVPN)</b></div>
-            <canvas linechart options="myOptions" type="Line" data="chart" width="0" height="0"></canvas>
-            </li>
-            <li class="col-lg-3" ng-controller="graphCtrl" ng-init="init(15,4)">
-            <div class="caption text-center"><b>Rotterdam (DMVPN)</b></div>
-            <canvas linechart options="myOptions" type="Line" data="chart" width="0" height="0"></canvas>
-            </li>
-            </ul>
-
-	  </div>
-
-	  <div class="row">
-
-	  <div class="col-lg-6 tablenagios">
-      <h3><i class="glyphicon glyphicon-eye-open"></i> Nagios Infrastructure Monitoring</h3>
-	<table class="table table-condensed" ng-controller="nagiosReyCtrl">
-        <thead>
-          <tr>
-            <th>Host</th>
-            <th>Service Check</th>
-            <th>Duration</th>
-          </tr>
-        </thead>
-        <tbody >
-          <tr ng-repeat="problem in problems | orderBy:'-duration'" class="{{ problem.cssClass }}">
-            <td>{{ problem.host }}</td>
-            <td><b>{{ problem.service }}</b> {{ problem.plugin_output }}</td>
-            <td>{{ problem.duration.humanize() }}</td>
-          </tr>
-        </tbody>
-      </table>
-	  </div>
-	  
-	  <div class="col-lg-1 tile-samskip">
-      <div class="innercontent" ng-controller="ratingCountCtrl" ng-click="open()">
-	  <h1><i class="glyphicon glyphicon-thumbs-up"></i> {{ ratingscount }}</h1><b>service ratings</b> done this month.
-      </div>
-	  </div>
-      <div class="col-lg-1 tile-samskip">
-      <div class="innercontent" ng-controller="jiraCtrl" ng-init="init(null,'jql','status != Closed and status != Resolved AND (project = TIC OR  project = TICUMF)','Helpdesk Reykjavik - Current Open Issues..')" ng-click="open()">
-	  <h1 class="{{ ticketWarningCSS }}"><i class="glyphicon glyphicon-stats"></i> {{ ticketCount }}</h1><b>REY Helpdesk</b> open issues.
-      </div>
-	  </div>
-      <div class="col-lg-1 tile-samskip">
-      <div class="innercontent" ng-controller="jiraCtrl" ng-init="init(null,'jql','status != Closed and status != Resolved AND (project = HRO OR  project = HROUMF)','Helpdesk Rotterdam - Current Open Issues..')" ng-click="open()" >
-	  <h1 class="{{ ticketWarningCSS }}"><i class="glyphicon glyphicon-stats"></i> {{ ticketCount }}</h1><b>RTM helpdesk</b> open issues.
-      </div>
-	  </div>
-      <div class="col-lg-1 tile-samskip" ng-controller="jiraCtrl" ng-init="init(null,'jql','status = Open AND (project = TIC OR project = HRO)','Unresponded Issues - In projects TIC and HRO..')" ng-click="open()">
-      <div class="innercontent innercontentwarning" ng-if="ticketCount > 0">
-	  <h1><i class="glyphicon glyphicon-question-sign"></i> {{ ticketCount }}</h1><b>Unresponded</b> issues.
-      </div>
-      <div class="innercontent" ng-if="ticketCount <= 0">
-	  <h1><i class="glyphicon glyphicon-question-sign"></i> {{ ticketCount }}</h1><b>Unresponded</b> issues.
-      </div>
-	  </div>
-	  
-	  <div class="col-lg-1 tile-samskip" ng-controller="jiraCtrl" ng-init="init(null,'jql','priority = Showstopper AND status != Closed AND status != Resolved AND (project = TIC OR project = HRO)','Showstopper Issues - In projects TIC and HRO..')" ng-click="open()">
-      <div class="innercontent innercontentdanger" ng-if="ticketCount > 0">
-	  <h1><i class="glyphicon glyphicon-exclamation-sign"></i> {{ ticketCount }}</h1><b>Showstopper</b> issues.
-      </div>
-      <div class="innercontent" ng-if="ticketCount <= 0">
-	  <h1><i class="glyphicon glyphicon-exclamation-sign"></i> {{ ticketCount }}</h1><b>Showstopper</b> issues.
-      </div>
-	  </div>
-	  
-	  <div class="col-lg-1 tile-samskip">
-      <div class="innercontent" ng-controller="jiraCtrl" ng-init="init(null,'jql','(project=TIC OR project=TICUMF) AND status=closed AND updated > startOfDay() ORDER BY updated DESC','Helpdesk Reykjavik - Closed issues today..')" ng-click="open()">
-	  <h1><i class="glyphicon glyphicon-flag"></i> {{ ticketCount }}</h1><b>REY Helpdesk</b> closed issues today.
-      </div>
-	  </div>
-
-	  <div class="col-lg-1 tile-samskip">
-      <div class="innercontent" ng-controller="jiraCtrl" ng-init="init(null,'jql','(project=HRO OR project=HROUMF) AND status=closed AND updated > startOfDay() ORDER BY updated DESC','Helpdesk Rotterdam - Closed issues today..')" ng-click="open()">
-	  <h1><i class="glyphicon glyphicon-flag"></i> {{ ticketCount }}</h1><b>RTM Helpdesk</b> closed issues today.
-      </div>
-	  </div>
-	  
-	  <div class="col-lg-1 tile-samskip">
-      <div class="innercontent" id="TestTile"  ng-controller="datacenterCtrl" ng-init="getDCTemp('10.150.8.130')">
-	  <h2><i class="glyphicon glyphicon-fire"></i> {{ DCtempature }}°C</h2><b>Asgard DC</b> temperature.
-      </div>
-	  </div>
-
-	  <div class="col-lg-1 tile-samskip">
-      <div class="innercontent" id="TestTile"  ng-controller="datacenterCtrl" ng-init="getDCTemp('10.150.8.131')">
-	  <h2><i class="glyphicon glyphicon-fire"></i> {{ DCtempature }}°C</h2><b>Niflheimr DC</b> temperature.
-      </div>
-	  </div>
-
-	  <div class="col-lg-1 tile-samskip" ng-controller="weatherYahooCtrl" ng-init="init(980389)">
-      <div class="innercontent innercontentnothing" id="TestTile">
-          <h1><i class="{{ cssWeather }}"></i> &nbsp; {{ tempature }}°C</h1>
-          <b>{{ locationText }}: </b>
-          {{ descWeather }}
-      </div>
-	  </div>
-      
-      <div class="col-lg-5 tile-samskip" ng-controller="deployCtrl">
-      <div class="innercontent">
-	  <h4><i class="glyphicon glyphicon-open"></i> <b>Upcoming</b> deployments</h4>
-      <table class="table deployment-table">
-      <thead>
-          <tr>
-            <th>Project</th>
-            <th>Description</th>
-            <th>Deployment time</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="deployment in deployments | orderBy:'DaysToDeploy' | limitTo:5 ">
-            <td>{{ deployment.Project }}</td>
-            <td>{{ deployment.VersionDescription }}</td>
-            <td><span am-time-ago="deployment.releasetime"></span></td>
-          </tr>
-        </tbody>
-      </table>
-      </div>
-	  </div>
-
-	  </div>
-      </div>
-    </div>
-
-    <div id="footer">
-        <div class="container-footer-full">
-            <ul class="list-inline" style="padding-top: 15px; padding-left: 15px;">
-            <li>
-                <i class="fa fa-cog fa-spin fa-2x scrolling-wheel"></i>
-            </li>
-            <li>
-                <p>
-                    No Breaking News!
-                </p>
-            </li>
-            </ul>
-        </div>
-    </div>
-
+    <!-- rev-hash -->
     <!-- build:js -->
+    <script src="assets/js/bower-vendor.js"></script>
+    <script src="assets/js/custom-vendor.js"></script>
+    <script src="assets/js/app.js"></script>
 	<!-- endbuild -->
+    <!-- end -->
 
   </body>
 </html>

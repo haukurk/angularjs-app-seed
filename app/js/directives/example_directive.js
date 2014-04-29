@@ -1,6 +1,6 @@
 /*global app*/
 
-app.directive('ExampleDirective', ['ExampleService'], function(ExampleService) {
+app.directive('ExampleDirective', ['ExampleService', function(ExampleService) {
         return {
 
             // required to make it work as an element
@@ -10,10 +10,7 @@ app.directive('ExampleDirective', ['ExampleService'], function(ExampleService) {
 
             // observe and manipulate the DOM
             link: function($scope, element, attrs) {
-			
-				ExampleService.getVersion
-			
-            }
-        }
 
-    });
+            }
+        };
+    }]);

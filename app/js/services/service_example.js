@@ -1,13 +1,11 @@
 /*global app*/
 
-'use strict';
-
 app.factory('ExampleService', function () {
+    'use strict';
     return {
             getVersion: function()
             {
-				var version = "0.1";
-                return version;
+                return "0.1";
             }
     };
 });
