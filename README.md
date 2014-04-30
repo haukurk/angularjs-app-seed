@@ -1,19 +1,19 @@
-﻿Angular App Seed with Gulp build system!
+Angular App Seed with Gulp build system!
 =====================
 
 This seed is simple and to the point.
-If you want something more fancy and complicated I recommend looking at generators at Yeoman.
+If you want something more fancy and complicated, I recommend you to check out AngularJS generator for Yeoman.
 
 #### Key features. ####
 
- 1. **Gulp** - Uses Gulp to minify and builds project files and watches for changes while you code.
- 2. **NG Structure** - Uses structure that makes sense and is used in practice.
- 3. **NG Filters** - Some built-in filters I find useful.
- 3. **Bower** - Uses bower to have JS libraries under control.
- 4. **Bootstrap** - Ready for using Bootstrap with bootstrap directives for AngularJS.
- 5. **Icons** - FontAwesome and Ionic awesomeness.
- 6. **Helpers** - Libraries that I cannot be without: Moment, Underscore and jQuery Core.
- 7. **Sass** - Allows using Sass as a project styling preprocessor. Sass is built with gulp-sass.
+ 1. **Gulp** - Use Gulp to minify and build project files and watch for changes while you code.
+ 2. **AngularJS Structure** - Structure that makes sense and is used by the AngularJS community.
+ 3. **AngularJS Filters** - Built-in filters that I find useful.
+ 3. **Bower** - Utilize Bower to have your JS libraries under control.
+ 4. **Bootstrap** - Bootstrap front-end framework and including bootstrap directives ([http://angular-ui.github.io/bootstrap/]) for AngularJS.
+ 5. **Icons** - FontAwesome and Ionic awesomeness to use with your Bootstrap front-end.
+ 6. **Helpers** - Libraries that is a must for every major web application: Moment, Underscore and jQuery Core.
+ 7. **Sass** - Allows to use Sass as a project styling preprocessor. Sass is built with gulp-sass nodeJS package.
 
 #### Prerequisites ####
 
