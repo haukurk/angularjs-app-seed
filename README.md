@@ -1,7 +1,8 @@
-﻿Angular App - Seed by Haukur Kristinsson, 2014.
+﻿Angular App Seed with Gulp build system!
 =====================
 
-This seed is simple and to the point. Nothing more to say.
+This seed is simple and to the point.
+If you want something more fancy and complicated I recommend looking at generators at Yeoman.
 
 #### Key features. ####
 
@@ -16,10 +17,10 @@ This seed is simple and to the point. Nothing more to say.
 
 #### Prerequisites ####
 
-- node.js [http://nodejs.org/][2]
-- npm [http://www.npmjs.org/][3]
-- bower [http://bower.io/][4]
-- gulp.js [http://gulpjs.com/][5]
+- node.js [http://nodejs.org/]
+- npm [http://www.npmjs.org/]
+- bower [http://bower.io/]
+- gulp.js [http://gulpjs.com/]
 
 #### Installation and Usage ####
 
@@ -45,12 +46,17 @@ Build project and watch for changes.
 gulp
 ```
 
+Build project.
+```
+gulp build
+```
+
 Watch for changes and build when occurred.
 ```
 gulp watch
 ```
 
-# Project Structure
+# AngularJS Project Structure
 
 This seed proposes the following structure.
 
@@ -58,24 +64,34 @@ This seed proposes the following structure.
 .
 +-- app
 ¦   +-- app.js
-¦   +-- controllers
-¦   ¦   +-- FirstCtrl.js
-¦   ¦   +-- SecondCtrl.js
-¦   +-- directives
-¦   ¦   +-- directive1.js
-¦   +-- filters
-¦   ¦   +-- filter1.js
-¦   +-- services
-¦       +-- CommonService.js
-¦       +-- cache
-¦       ¦   +-- Cache1.js
-¦       ¦   +-- Cache2.js
-¦       +-- models
-¦           +-- Model1.js
-¦           +-- Model2.js
-+-- partials
-+-- lib
+¦   +-- css
+¦   +-- fonts
+¦   +-- images
+¦   +-- js
+¦       +-- controllers
+¦       ¦   +-- controller_example.js
+¦       +-- directives
+¦       ¦   +-- directive_example.js
+¦       +-- factories
+¦       |   +-- factory_example.js
+¦       +-- filters
+¦       |   +-- filterX.js
+|       +-- services
+|           +-- service_example.js
+|           +-- cache
+|           ¦   +-- Cache1.js
+|           ¦   +-- Cache2.js
+|           +-- models
+|               +-- Model1.js
+|               +-- Model2.js
++-- build
+|   +-- assets
+|   +-- views
+|   index.html
 +-- test
++-- gulpfile.js
++-- bower.json
++-- package.json
 ```
 
 # Other
