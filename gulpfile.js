@@ -41,20 +41,22 @@ var src = {
 /* Bower - CSS */
 buildBowerSrc('fontawesome/css/font-awesome.css',bower_src.css);
 buildBowerSrc('ionicons/css/ionicons.css',bower_src.css);
+buildBowerSrc('bootstrap/dist/css/bootstrap.css',bower_src.css);
+buildBowerSrc('bootstrap/dist/css/bootstrap-theme.css',bower_src.css);
 /* Bower - JS */
 buildBowerSrc('angular/angular.js',bower_src.js);
 buildBowerSrc('angular-animate/angular-animate.js',bower_src.js);
 buildBowerSrc('angular-cookies/angular-cookies.js',bower_src.js);
-buildBowerSrc('angular/angular-resource.js',bower_src.js);
-buildBowerSrc('angular/angular-route.js',bower_src.js);
-buildBowerSrc('angular/angular-sanitize.js',bower_src.js);
+buildBowerSrc('angular-resource/angular-resource.js',bower_src.js);
+buildBowerSrc('angular-route/angular-route.js',bower_src.js);
+buildBowerSrc('angular-sanitize/angular-sanitize.js',bower_src.js);
 buildBowerSrc('jquery/dist/jquery.js',bower_src.js);
 buildBowerSrc('moment/moment.js',bower_src.js);
 buildBowerSrc('underscore/underscore.js',bower_src.js);
 /* Bower - Fonts */
 buildBowerSrc('fontawesome/fonts/*.{otf,eot,svg,ttf,woff}',bower_src.fonts);
 buildBowerSrc('ionicons/fonts/*.{otf,eot,svg,ttf,woff}', bower_src.fonts);
-
+buildBowerSrc('bootstrap/dist/fonts/*.{otf,eot,svg,ttf,woff}', bower_src.fonts);
 
 /* Build locations */
 var build = {
@@ -161,15 +163,10 @@ gulp.task('build:js:vendor', ['build:js:bower','build:js:shim'], function() {
 /* Bower Vendor */ 
 
 gulp.task("build:js:bower", function(){
-    console.log("length: "+bower_src.js.length);
     gulp.src(bower_src.js)
     .pipe(uglify({outSourceMap: true, warnings: false}))
     .pipe(concat('bower-vendor.js'))
     .pipe(gulp.dest(build.libs));
-    for(var i = 0; i > bower_src.js.length; i++)
-    {
-        console.log(bower_src.js[i]);
-    }
 });
 
 /* Shim JS */

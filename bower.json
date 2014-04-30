@@ -12,7 +12,9 @@
 	"underscore": "1.6.0",
 	"moment": "2.6.0",
 	"fontawesome": "4.0.3",
-	"ionicons": "1.4.1"
+	"ionicons": "1.4.1",
+    "angular-ui-bootstrap": "*",
+	"bootstrap": "3.1.1"
   },
   "devDependencies":
   {},
