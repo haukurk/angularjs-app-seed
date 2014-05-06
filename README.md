@@ -96,7 +96,7 @@ This seed proposes the following structure.
 
 # Other
 
-Pull request gladly accepted. :)
+Pull requests gladly accepted. :)
 
 # License
 
