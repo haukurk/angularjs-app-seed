@@ -1,3 +1,5 @@
+*Note* - This is not recommended by me anymore. Look at my Webpack+AngularJS 1.5 repo for more to-date project.
+
 Angular App Seed with Gulp build system!
 =====================
 
